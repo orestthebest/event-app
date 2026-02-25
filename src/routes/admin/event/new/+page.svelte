@@ -32,19 +32,20 @@
     </div>
 
 
-  <div>
-        <label for="category">Category:</label>
-        <select id="category" name="category_id" required>
+    <div>
+        <label for="category">Select a category</label>
+        <select name="category_id" id="category">
             {#each data.categories as category}
-                <option value={category.id}>
-                    {category.name}
-                </option>
+            <option value="{category.id}">
+                {category.name}
+            </option>
             {/each}
         </select>
     </div>
- 
+
+
     <div>
-        <button type="submit">Create Event</button>
+        <button type="submit">Create event</button>
     </div>
+
 </form>
- 
