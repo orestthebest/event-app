@@ -1,13 +1,26 @@
 <script>
 	import favicon from '$lib/assets/favicon.svg';
+	import { userInfo } from 'os';
 	import '../app.css';
-	let { children } = $props();
+	let { children, data } = $props();
 </script>
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
+<header>
+	<p>Welcome {data.user?.username || 'Anonymous'}</p>
+
+	{#if data.user}
+	<form action="/logout?/logout" method="POST">
+		<button type="submit">Logout</button>
+	</form>
+
+	{:else}
+		<a href="/login">Please Login</a>
+	{/if}
+</header>
 {@render children()}
 
 <footer>
@@ -23,8 +36,6 @@
 </footer>
 
 <style>
-
-
 	footer {
 		display: flex;
 		justify-content: space-evenly;
@@ -32,12 +43,14 @@
 		background-color: rgb(255, 135, 79);
 	}
 	a {
-
-		   text-decoration: none;
-		   color: black;
-		   
-    
+		text-decoration: none;
+		color: black;
 	}
 
-
+	header {
+		padding: 20px;
+		background-color: orangered;
+		display: flex;
+		justify-content: space-between;
+	}
 </style>

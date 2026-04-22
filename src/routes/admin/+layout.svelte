@@ -1,15 +1,15 @@
 <script>
-    let { children } = $props();
+	let { children } = $props();
 </script>
 
 <header>
-   <h1> Admin Dashboard</h1> 
+	<h1>Admin Dashboard</h1>
 </header>
 
-{@render children ()}
+{@render children()}
 
 <style>
-    header{
-        background-color: rgb(255, 191, 0);
-    }
+	header {
+		background-color: rgb(255, 191, 0);
+	}
 </style>

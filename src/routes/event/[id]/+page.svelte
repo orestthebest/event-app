@@ -1,7 +1,6 @@
 <script>
-    let {data} = $props();
+	let { data } = $props();
 </script>
-
 
 <h1>{data.event.name}</h1>
 
